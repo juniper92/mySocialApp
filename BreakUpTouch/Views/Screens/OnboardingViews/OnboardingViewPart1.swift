@@ -13,12 +13,12 @@ struct OnboardingViewPart1: View {
     
     @State var displayName: String = ""
     @State var selectedGender : UserModel.Gender = genders.first!
-        
+    //    @State var selectedState : UserModel.UserState = userstate.first!
+    
     var body: some View {
         
-        HStack {
             
-            VStack(alignment: .leading, spacing: 40) {
+            VStack(alignment: .leading, spacing: 50) {
                 
                 Text("프로필을\n설정해주세요 :)")
                     .font(.largeTitle)
@@ -32,19 +32,19 @@ struct OnboardingViewPart1: View {
                         .foregroundColor(Color.MyColorTheme.fontDarkgrayColor)
                         .padding(.top)
                     
-                    HStack {
+                    HStack(spacing: 20) {
                         ForEach(genders) { genders in
                             
                             HStack {
                                 Text(genders.title)
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                    .frame(width: getWidth()*1.5, height: getWidth()/2)
+                                    .frame(width: getWidth()*1.4, height: getWidth()/2)
                                     .foregroundColor((selectedGender.id == genders.id ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor))
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 12)
                                             .stroke((selectedGender.id == genders.id ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor), lineWidth: 1)
-                                )
+                                    )
                             }
                             .onTapGesture {
                                 withAnimation(.spring()) {
@@ -54,12 +54,9 @@ struct OnboardingViewPart1: View {
                         }
                     }
                 }
-                .padding(.trailing)
                 
                 
                 //MARK: - 닉네임 입력
-                
-                
                 VStack(alignment: .leading) {
                     
                     Text("닉네임")
@@ -79,22 +76,19 @@ struct OnboardingViewPart1: View {
                         .foregroundColor(Color.MyColorTheme.fontLightgrayColor)
                 }
                 .padding(.trailing)
-
+                .padding(.bottom)
+                
             }
-            .padding(.leading, 40)
-            .padding(.trailing)
-            
-            
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal)
+            .padding(.leading)
+            .padding(.bottom)
+        
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
-        
-        Spacer(minLength: 50)
 
     }
     
-
+    
     //MARK: - FUNCTIONS
     func getWidth() -> CGFloat {
         
@@ -102,7 +96,7 @@ struct OnboardingViewPart1: View {
         
         return width / 3
     }
-
+    
     
     
     struct OnboardingViewPart1_Previews: PreviewProvider {

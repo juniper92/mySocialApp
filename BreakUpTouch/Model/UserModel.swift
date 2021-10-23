@@ -22,6 +22,14 @@ struct UserModel: Identifiable, Hashable {
     var userID: String      // DB에 저장되는 유저ID
     var username: String    // DB에 저장되는 유저의 닉네임
     
+    // 유저 현재상태
+    struct UserState: Identifiable {
+        
+        var id: String = UUID().uuidString
+        var image: String
+        var title: String
+    }
+    
     // 이별 전
     struct UserStateBefore: Identifiable {
 
@@ -56,6 +64,11 @@ var genders = [
     UserModel.Gender(title: "남성")
 ]
 
+var userstate = [
+    UserModel.UserState(image: "Imozi.soso" ,title: "이별 전 상태"),
+    UserModel.UserState(image: "Imozi.sad" ,title: "이별 후 슬픔"),
+    UserModel.UserState(image: "Imozi.angry" ,title: "이별 후 분노")
+]
 
 
 var before = [
