@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OnboardingViewPart1: View {
     
+    @AppStorage("currentPage") var currentPage = 1
+    
     @State var displayName: String = ""
     
     @State private var femaleButtonIsEnabled: Bool = false
@@ -108,33 +110,7 @@ struct OnboardingViewPart1: View {
                         .padding(.trailing)
                 }
                 .padding(.trailing)
-                
-                
-                
-                //MARK: - 하단 이미지
-                HStack {
-                    Image("Onboardingheart.half")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30, alignment: .center)
-                    
-                    Spacer()
-                    
-                    Button {
-                        showOnboardingPart2.toggle()
-                    } label: {
-                        Image(systemName: "arrow.forward")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30, alignment: .center)
-                            .foregroundColor((femaleButtonIsEnabled == true || maleButtonIsEnabled == true) && (displayName != "") ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor)
-                            .animation(.easeIn(duration: 0.7))
-                            .padding(.trailing)
-                    }
-                    
-                }
-                .padding(.top, 50)
-                
+
             }
             .padding(.leading, 40)
             .padding(.trailing)
@@ -144,9 +120,9 @@ struct OnboardingViewPart1: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
-        .fullScreenCover(isPresented: $showOnboardingPart2) {
-            OnboardingViewPart2()
-        }
+        
+        Spacer(minLength: 50)
+
     }
     
 

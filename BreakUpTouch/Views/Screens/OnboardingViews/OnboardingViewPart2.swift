@@ -84,32 +84,8 @@ struct OnboardingViewPart2: View {
                 }
                 .padding(.leading)
                 
-                
-                //MARK: - 하단 이미지
-                HStack {
-                    Image("Onboardingheart.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30, alignment: .center)
-                        .padding(.leading)
-                    
-                    Spacer()
-                    
-                    
-                    Button {
-                        showOnboardingPart3.toggle()
-                    } label: {
-                            Text("완료")
-                                .font(.title2.bold())
-                                .foregroundColor(Color.MyColorTheme.orangeColor)
-                            //                            .animation(.easeIn(duration: 0.7))
-                                .padding(.trailing)
-                        
-                    }
-                    
-                }
-                .padding(.leading)
-                
+                Spacer(minLength: 50)
+                                
             }
             .padding(.trailing)
             
@@ -119,9 +95,6 @@ struct OnboardingViewPart2: View {
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
         .padding()
-        .fullScreenCover(isPresented: $showOnboardingPart3) {
-            OnboardingViewPart3()
-        }
         
         
     }

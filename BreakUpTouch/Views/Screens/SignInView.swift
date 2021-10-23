@@ -108,7 +108,7 @@ struct SignInView: View {
         .background(Color.MyColorTheme.orangeColor)
         .edgesIgnoringSafeArea(.all)
         .fullScreenCover(isPresented: $showOnboardingPageView) {
-            OnboardingViewPart1()
+            OnboardingScreen()
         }
         
     }

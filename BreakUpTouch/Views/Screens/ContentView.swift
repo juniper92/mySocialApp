@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // OnboardingViews...
+    @AppStorage("currentPage") var currentPage = 1
+    
     var currentUserID: String? = "nil"
     
     //1018 add
@@ -17,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            if currentUserID != nil {
+            if currentUserID != nil && currentPage > totalPages{
                 
                 TabView {
                     NavigationView {
@@ -47,14 +50,6 @@ struct ContentView: View {
             }
             else {
                 SignInView()
-                
-                //                //1018 add
-                //                if currentUserID != nil {
-                //                    fullScreenCover(isPresented: $shouldShowOnboarding) {
-                //                        OnboardingViewPart1()
-                //                    }
-                //                }
-                
             }
         }
     }
@@ -66,3 +61,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+var totalPages = 2
