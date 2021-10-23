@@ -12,20 +12,8 @@ struct OnboardingViewPart1: View {
     @AppStorage("currentPage") var currentPage = 1
     
     @State var displayName: String = ""
-    
-    @State private var femaleButtonIsEnabled: Bool = false
-    @State private var maleButtonIsEnabled: Bool = false
-    
-    //add
-    @State var selection: String = "여성"
-    let filterOptions: [String] = [
-        "여성", "남성"
-    ]
-    // add finish
-    
-    
-    @State var showOnboardingPart2: Bool = false
-    
+    @State var selectedGender : UserModel.Gender = genders.first!
+        
     var body: some View {
         
         HStack {
@@ -45,43 +33,25 @@ struct OnboardingViewPart1: View {
                         .padding(.top)
                     
                     HStack {
-                        Button {
-                            femaleButtonIsEnabled.toggle()
-                        } label: {
-                            Text(filterOptions[0])
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .frame(height: 50)
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(femaleButtonColor)
-                                .background(Color.white)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 8)
-                                            .stroke(femaleButtonColor))
-                                .padding(.trailing)
+                        ForEach(genders) { genders in
+                            
+                            HStack {
+                                Text(genders.title)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .frame(width: getWidth()*1.5, height: getWidth()/2)
+                                    .foregroundColor((selectedGender.id == genders.id ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke((selectedGender.id == genders.id ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor), lineWidth: 1)
+                                )
+                            }
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    selectedGender = genders
+                                }
+                            }
                         }
-                        .disabled(maleButtonIsEnabled)
-                        
-
-                        
-                        Button {
-                            maleButtonIsEnabled.toggle()
-                        } label: {
-                            Text(filterOptions[1])
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .frame(height: 50)
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(maleButtonColor)
-                                .background(Color.white)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 8)
-                                            .stroke(maleButtonColor))
-                                .padding(.trailing)
-                        }
-                        .disabled(femaleButtonIsEnabled)
-
-                        
                     }
                 }
                 .padding(.trailing)
@@ -107,7 +77,6 @@ struct OnboardingViewPart1: View {
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(Color.MyColorTheme.fontLightgrayColor)
-                        .padding(.trailing)
                 }
                 .padding(.trailing)
 
@@ -126,15 +95,14 @@ struct OnboardingViewPart1: View {
     }
     
 
-    //MARK: - 색상변수
-    var femaleButtonColor: Color {
-        return femaleButtonIsEnabled != false ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor
+    //MARK: - FUNCTIONS
+    func getWidth() -> CGFloat {
+        
+        let width = UIScreen.main.bounds.width - (30 + 50)
+        
+        return width / 3
     }
-    
-    var maleButtonColor: Color {
-        return maleButtonIsEnabled != false ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontLightgrayColor
-    }
-    
+
     
     
     struct OnboardingViewPart1_Previews: PreviewProvider {

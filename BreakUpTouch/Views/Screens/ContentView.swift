@@ -12,15 +12,12 @@ struct ContentView: View {
     // OnboardingViews...
     @AppStorage("currentPage") var currentPage = 1
     
-    var currentUserID: String? = "nil"
-    
-    //1018 add
-    @State var shouldShowOnboarding: Bool = true
+//    var currentUserID: String? = nil
     
     var body: some View {
         
         ZStack {
-            if currentUserID != nil && currentPage > totalPages{
+            if currentPage > totalPages{
                 
                 TabView {
                     NavigationView {
