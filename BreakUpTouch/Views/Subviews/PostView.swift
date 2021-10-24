@@ -12,6 +12,14 @@ struct PostView: View {
     @State var post: PostModel
     var showHeaderAndFooter: Bool
     
+    @State var showActionSheet: Bool = false
+    @State var actionSheetType: PostActionSheetOption = .general
+    
+    enum PostActionSheetOption {
+        case general
+        case reporting
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             
@@ -37,8 +45,17 @@ struct PostView: View {
                    
                     Spacer()
                     
-                    Image(systemName: "ellipsis")
-                        .font(.headline)
+                    Button {
+                        showActionSheet.toggle()
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .font(.headline)
+                    }
+                    .accentColor(Color.MyColorTheme.fontDarkgrayColor)
+                    .actionSheet(isPresented: $showActionSheet) {
+                        getActionSheet()
+                    }
+                    
                 }
                 .padding(.all, 7)
             }
@@ -79,7 +96,7 @@ struct PostView: View {
                         CommentsView()
                     } label: {
                         Image(systemName: "bubble.left.and.bubble.right")
-                            .font(.headline.bold())
+                            .font(.headline)
                             .foregroundColor(Color.MyColorTheme.orangeColor)
                         
                         Text("댓글보기")
@@ -88,6 +105,17 @@ struct PostView: View {
                     }
                     
                     Spacer()
+                    
+                    
+//                    //MARK: - 게시물 공유
+//                    Button {
+//                        sharePost()
+//                    } label: {
+//                        Image(systemName: "tray.and.arrow.up")
+//                            .font(.title3)
+//                            .foregroundColor(Color.MyColorTheme.orangeColor)
+//                    }
+                    
                 }
                 .padding(.all, 7)
 
@@ -96,7 +124,58 @@ struct PostView: View {
         }
         .padding()
     }
-
+    
+    
+    //MARK: - FUNCTION
+    
+    func getActionSheet() -> ActionSheet {
+        switch self.actionSheetType {
+        case .general:
+            return ActionSheet(title: Text("What would you like to do?"), message: nil, buttons: [
+                .destructive(Text("Reoprt"), action: {
+                    
+                    self.actionSheetType = .reporting
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.showActionSheet.toggle()
+                    }
+                }),
+                
+                    .default(Text("Learn more..."), action: {
+                        print("LEARN MORE PRESSED")
+                    }),
+                
+                    .cancel()
+            ])
+            
+        case .reporting:
+            return ActionSheet(title: Text("Why are you reoprting this post?"), message: nil, buttons: [
+                .destructive(Text("This is inappropriate"), action: {
+                    reportPost(reason: "This is inappropriate")
+                }),
+                .destructive(Text("This is spam"), action: {
+                    reportPost(reason: "This is spam")
+                }),
+                .destructive(Text("It made me uncomfortable"), action: {
+                    reportPost(reason: "It made me uncomfortable")
+                }),
+                
+                    .cancel({
+                        self.actionSheetType = .general
+                    })
+            ])
+        
+        }
+    }
+    
+    func reportPost(reason: String) {
+        print("REPORT POST NOW")
+    }
+    
+//    func sharePost() {
+//
+//        let activityViewController = UIActivityViewController(activityItems: <#T##[Any]#>, applicationActivities: nil)
+//
+//    }
 }
 
 

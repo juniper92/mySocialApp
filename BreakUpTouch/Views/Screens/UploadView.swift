@@ -7,36 +7,50 @@
 
 import SwiftUI
 
+
 struct UploadView: View {
+    
+    @StateObject var newPostData = NewPostModel()
+    
     var body: some View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     
                     VStack(alignment: .leading) {
-                        Image(systemName: "camera.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: getWidth() / 2, height: getWidth() / 2)
-                            .foregroundColor(Color.MyColorTheme.orangeColor)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.MyColorTheme.orangeColor, lineWidth: 1.5)
-                                    .frame(width: getWidth(), height: getWidth())
-                            )
-                        .padding()
-                        .padding(.top)
-//                        .padding(.leading)
                         
-                        Image("upload.memo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity)
+                        HStack {
+                            Image(systemName: "camera.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: getWidth() / 2, height: getWidth() / 2)
+                                .foregroundColor(Color.MyColorTheme.orangeColor)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .stroke(Color.MyColorTheme.orangeColor, lineWidth: 1.5)
+                                        .frame(width: getWidth(), height: getWidth())
+                                )
+                            .padding()
+                            .padding(.top)
+    //                        .padding(.leading)
+                        }
+                        
+//                        ZStack {
+                            Image("upload.memo")
+                                .resizable()
+                                .scaledToFit()
+//                                .frame(maxWidth: .infinity)
+                                .overlay(
+                                    TextEditor(text: $newPostData.postText)
+                                        .padding()
+                                        .padding()
+                                        .padding(.trailing, 20)
+                                )
+                            
+//                        }
                     }
                     .padding(.leading)
-                    
-                    
-                    
+                                        
                     HStack {
                         Group {
                             Button {
@@ -88,7 +102,6 @@ struct UploadView: View {
     func getWidth() -> CGFloat {
         // Horizontal padding = 30
         // Spacing = 30
-        //        let width = UIScreen.main.bounds.width - (50 + 10)
         let width = UIScreen.main.bounds.width - (30 + 80)
         
         return width / 3

@@ -51,6 +51,7 @@
 		069D80D32706CB2D00C1748B /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D80D22706CB2D00C1748B /* SearchBarView.swift */; };
 		06B06CC2271FD47200CD6B1A /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06CC1271FD47200CD6B1A /* MissionView.swift */; };
 		06B06CC4271FD47F00CD6B1A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06CC3271FD47F00CD6B1A /* CalendarView.swift */; };
+		06B7347B27254CF1004242F3 /* NewPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7347A27254CF1004242F3 /* NewPostModel.swift */; };
 		06BCBD2D26FD607F0032A851 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BCBD2C26FD607F0032A851 /* PostModel.swift */; };
 		06BCBD2F26FD77180032A851 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BCBD2E26FD77180032A851 /* PostArrayObject.swift */; };
 		06BCBD3126FDB7C00032A851 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BCBD3026FDB7C00032A851 /* CommentsView.swift */; };
@@ -106,6 +107,7 @@
 		069D80D22706CB2D00C1748B /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		06B06CC1271FD47200CD6B1A /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		06B06CC3271FD47F00CD6B1A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		06B7347A27254CF1004242F3 /* NewPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostModel.swift; sourceTree = "<group>"; };
 		06BCBD2C26FD607F0032A851 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		06BCBD2E26FD77180032A851 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
 		06BCBD3026FDB7C00032A851 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				0662BC4A271683BB000E2B93 /* UserModel.swift */,
 				06BCBD2E26FD77180032A851 /* PostArrayObject.swift */,
 				064A34D026FFAC3800ECE493 /* CommentModel.swift */,
+				06B7347A27254CF1004242F3 /* NewPostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				0647CBCB2710990800539997 /* LogInHeaderView.swift in Sources */,
 				06486C162723F383007A8C1B /* OnboardingScreen.swift in Sources */,
 				0647CBC92710986200539997 /* LogInFieldView.swift in Sources */,
+				06B7347B27254CF1004242F3 /* NewPostModel.swift in Sources */,
 				06B06CC2271FD47200CD6B1A /* MissionView.swift in Sources */,
 				06BCBD3126FDB7C00032A851 /* CommentsView.swift in Sources */,
 				0667A839271429F900DF44A0 /* FindPasswordView.swift in Sources */,
