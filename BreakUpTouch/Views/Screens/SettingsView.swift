@@ -49,25 +49,18 @@ struct SettingsView: View {
                     
                     // MARK: 챗봇연결
                     Button {
-                        openChatbotURL(urlString: "http://pf.kakao.com/_BXaQs")
+                        openChatbotURL(urlString: "")
                     } label: {
                         SettingsRowView(leftIcon: "exclamationmark.bubble.fill", text: "문의하기", color: Color.MyColorTheme.orangeColor)
-                    }
-                    
-                    // MARK: 개발자 정보
-                    NavigationLink {
-                        DeveloperInformationView()
-                    } label: {
-                        SettingsRowView(leftIcon: "person.2.fill", text: "개발자 정보", color: Color.MyColorTheme.orangeColor)
                     }
                     
                 }
                 .padding()
                 
                 
-                // MARK: 회사정보
+                // MARK: 
                 GroupBox {
-                    Text("코보티스 회사소개 \n코보티스 주식회사 (로고삽입) - 선택사항")
+                    Text("")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
