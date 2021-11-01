@@ -26,13 +26,13 @@ struct SignInView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    Text("이별터치")
+                    Text("소셜 앱")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(Color.white)
                         .padding(.bottom, -5)
                     
-                    Text("당신의 마음을\n어루만져 줄게요")
+                    Text("안녕하세요\n반갑습니다!")
                         .font(.largeTitle)
                         .foregroundColor(Color.white)
                         .lineSpacing(6)

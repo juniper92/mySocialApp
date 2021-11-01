@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "appicon_social.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "자산 34@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -38,7 +38,6 @@
 		0667E48626F470CC006EFBFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0667E48526F470CC006EFBFD /* LaunchScreen.storyboard */; };
 		0667E48826F47A8A006EFBFD /* JalnanOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0667E48726F47A8A006EFBFD /* JalnanOTF.otf */; };
 		066B416B2703FEB4000BDA88 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B416A2703FEB4000BDA88 /* SettingsRowView.swift */; };
-		066B416D2704328F000BDA88 /* DeveloperInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B416C2704328F000BDA88 /* DeveloperInformationView.swift */; };
 		066B416F270436A3000BDA88 /* InformationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B416E270436A3000BDA88 /* InformationRowView.swift */; };
 		066B4FB6270295BA00668140 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B4FB5270295BA00668140 /* NavigationBarModifier.swift */; };
 		066B4FBA2702F5A100668140 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066B4FB92702F5A100668140 /* SettingsView.swift */; };
@@ -94,7 +93,6 @@
 		0667E48526F470CC006EFBFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0667E48726F47A8A006EFBFD /* JalnanOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JalnanOTF.otf; sourceTree = "<group>"; };
 		066B416A2703FEB4000BDA88 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
-		066B416C2704328F000BDA88 /* DeveloperInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInformationView.swift; sourceTree = "<group>"; };
 		066B416E270436A3000BDA88 /* InformationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationRowView.swift; sourceTree = "<group>"; };
 		066B4FB5270295BA00668140 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		066B4FB92702F5A100668140 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				066B4FB92702F5A100668140 /* SettingsView.swift */,
 				063D5B622705460000E586F4 /* SettingsEditTextView.swift */,
 				063D5B6427055B9700E586F4 /* SettingsEditImageView.swift */,
-				066B416C2704328F000BDA88 /* DeveloperInformationView.swift */,
 				0662BC472716579B000E2B93 /* LogInViews */,
 			);
 			path = Screens;
@@ -407,7 +404,6 @@
 				069D80D32706CB2D00C1748B /* SearchBarView.swift in Sources */,
 				0667E47726F4559A006EFBFD /* BreakUpTouchApp.swift in Sources */,
 				066B4FBC2702F7FE00668140 /* SettingsLabelView.swift in Sources */,
-				066B416D2704328F000BDA88 /* DeveloperInformationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
